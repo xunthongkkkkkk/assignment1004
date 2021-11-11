@@ -1,0 +1,23 @@
+/*
+refer:
+https://www.youtube.com/watch?v=jY7KVruyGjs
+https://github.com/WiringPi/WiringPi.git
+
+1. connect to raspberry pi platform
+2. ensure you have git core 
+    sudo apt-get install git-core
+3. glone git link to get WiringPi library
+    git clone https://github.com/WiringPi/WiringPi.git
+4. go into wiringPi file and check if it is up-to-date
+    cd WiringPi
+    git pull origin
+5. build and compile script
+    ./build
+6. create a file inside wiringPi
+    mkdir [filename]
+7. go into the file and create a c file
+    cd [filename]
+    nano buttonled.c 
+8. Once finish coding, compile 
+    gcc -o buttonled -lwiringPi buttonled.c
+*/
