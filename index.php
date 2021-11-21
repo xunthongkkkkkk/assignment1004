@@ -23,35 +23,32 @@
 </center>
 
 <?php
-        exec("gpio -g mode 0 out");
-        exec("gpio -g mode 0 out");
+    if(isset($_GET['redL'])){
+        if($_GET['redL'] == 'ron'){
+            $argvc = "0 1";
+            exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
 
-        if(isset($_GET['redL'])){
-                if($_GET['redL'] == 'ron'){
-                        $argvc = "0 1";
-                        exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
+        }else if($_GET['redL'] == 'rblink'){
+            $argvc = "0 2";
+            exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
 
-                }else if($_GET['redL'] == 'rblink'){
-                        $argvc = "0 2";
-                        exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
-
-                }else if($_GET['redL'] == 'roff'){
-                        $argvc = "0 3";
-                        exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
-                }
+        }else if($_GET['redL'] == 'roff'){
+            $argvc = "0 3";
+            exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
         }
+    }
 
-        if(isset($_GET['greenL'])){
-            if($_GET['greenL'] == 'gon'){
-                    $argvc = "0 4";
-                    exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
-            } else if($_GET['greenL'] == 'gblink'){
-                    $argvc = "0 5";
-                    exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
-            } else if($_GET['greenL'] == 'goff'){
-                    $argvc = "0 6";
-                    exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
-            }
+    if(isset($_GET['greenL'])){
+        if($_GET['greenL'] == 'gon'){
+            $argvc = "0 4";
+            exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
+        } else if($_GET['greenL'] == 'gblink'){
+            $argvc = "0 5";
+            exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
+        } else if($_GET['greenL'] == 'goff'){
+            $argvc = "0 6";
+            exec("/../../../home/pi/pi/WiringPi/ledBlink/webcontrol $argvc 2>&1");
+        }
     }
 
 ?>
