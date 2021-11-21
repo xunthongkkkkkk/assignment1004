@@ -1,0 +1,42 @@
+/*
+refer:
+https://www.hackster.io/gabrieltatarusanu/control-led-from-web-on-raspberry-pi-09bb51
+
+1. Download Apache Web Server
+    sudo apt-get update
+    sudo apt-get install apache2 -y
+
+2. Find the Pi's IP address to link on the browser
+    ifconfig
+
+3. Navigate to the directory which owned by root user
+    cd /var/www/html
+
+4. Change the ownership to your username
+    sudo chown pi: index.html
+
+5. Install PHP in Raspberry Pi to code along with html
+    sudo apt-get install php libapache2-mod-php -y
+
+6. Create your own php file that once open browser, it automatically runs the php file
+    sudo rm index.html
+    sudo nano index.php
+
+7. In the php file, start coding HTML code so that user can click on submit button in a form
+
+8. Use php to execute C compiler upon user's button clicked, each button will pass arguments to the C compiler that is executed
+
+9. Create a C program in the folder where it can access WiringPi
+    cd 
+    cd pi/WiringPi/ledBlink
+    nano webcontrol.C
+
+10. In the c file, use command line arguments which was passed by php file to control led lights
+    int LED_BUTTON = atoi(argv[1]);
+    int choice = atoi(argv[2]);
+
+11. Once finish writing, compile it with wiringPi 
+    gcc -Wall -g -o webcontrol webcontrol.c -lwiringPi
+
+
+*/
