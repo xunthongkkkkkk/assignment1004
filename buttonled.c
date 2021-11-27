@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <wiringPi.h>
-#include <pthread.h>
-#include <signal.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 //gpio number
 #define LED_BUTTON 27
